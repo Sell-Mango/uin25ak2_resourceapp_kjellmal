@@ -1,0 +1,30 @@
+@use "globals";
+
+article {
+    background-color: globals.$white-clr;
+    padding: 2.2rem 3rem;
+
+    h1 {
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+
+    h1, h2 {
+        color: globals.$primary-clr;
+    }
+    ul {
+        padding-left: 0;
+        
+        a {
+            list-style-type: circle;
+            text-decoration: underline;
+            color: globals.$primary-clr;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    article {
+        padding: 1rem 2rem;
+    }
+}

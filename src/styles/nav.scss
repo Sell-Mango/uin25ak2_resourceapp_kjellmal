@@ -1,0 +1,39 @@
+@use "globals";
+
+nav {
+    ul {
+        display: flex;
+        gap: 0.8rem;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style-type: none;
+        font-weight: 700;
+        background-color: globals.$primary-clr;
+        text-transform: capitalize;
+        text-align: center;
+        flex-grow: 1;
+        cursor: pointer;
+
+        a {
+            color: globals.$white-clr;
+            padding: 1.2rem;
+            display: block;
+        }
+    }
+}
+
+.tab_active {
+    background-color: globals.$white-clr;
+    a { color: globals.$primary-clr; }
+}
+
+@media only screen and (max-width: 900px) {
+    nav {
+        ul {
+            flex-wrap: wrap; 
+            gap: 0.5rem;
+        }
+    }
+}
