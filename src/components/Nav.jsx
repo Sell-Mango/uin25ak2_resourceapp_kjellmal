@@ -1,21 +1,20 @@
-import { useState } from "react";
 import { Link } from "react-router";
 
-export default function Nav({ resources }) {
+export default function Nav({ categories, currentCategory, setCurrentCategory }) {
 
-    const categories = resources.filter((value, index) => 
-        resources.findIndex((item) => item.category === value.category) === index
-    );
+    const handleClick = (value) => {
+        setCurrentCategory(value);
+    }
 
     return (
         <nav>
             <ul>
-                <>
                 {
                     categories.map((item, index) => 
-                        <li key={`tab_${index}`} className="tab_active"><Link to={`/${item.category}`}>{item.category}</Link></li>
+                        <li key={`tab_${index}`} className={ item.category === currentCategory ? "tab_active" : "" } onClick={() => handleClick(item.category)}>
+                            <Link to={`/${item.category}`}>{item.category}</Link>
+                        </li>
                 )}
-                </>
             </ul>
         </nav>
     );

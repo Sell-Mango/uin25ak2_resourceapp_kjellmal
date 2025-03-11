@@ -1,15 +1,16 @@
+import '../styles/resources.scss';
+
 import { useParams } from "react-router";
 
 import PageTitle from "./PageTitle";
 
-export default function Resources({ resources }) {
+export default function Resources({ resources, currentCategory }) {
 
-    const { category } = useParams();
+    const { category = currentCategory } = useParams();
 
     return (
         <article>
-            <PageTitle category={category} />
-            <p>Demo tekst</p>
+            <PageTitle category={currentCategory} />
             <ul>
                     {
                         resources.map((value, index) => (
